@@ -53,7 +53,7 @@ export function identifyArray(array) {
  obj now does not contain the `password` field
  */
 export function removeKey(object, key) {
-
+   delete object.key;
 }
 
 /**
@@ -73,7 +73,8 @@ export function removeKey(object, key) {
  If only `removeKeyNonDestructive` was called, nothing would have changed.
  */
 export function removeKeyNonDestructive(object, key) {
-
+   var newObj = delete object.key;
+   return newObj;
 }
 
 /**
