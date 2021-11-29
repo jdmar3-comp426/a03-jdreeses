@@ -10,6 +10,12 @@ import { allCarStats } from "./src/medium/medium_2.js";
 import { searchHighPower } from "./src/medium/medium_3.js";
 import { searchName } from "./src/medium/medium_3.js";
 import { searchByYear } from "./src/medium/medium_3.js";
-
+import { repeat } from "./src/spicy/spicy_9.js";
+import { repeatDemo } from "./src/spicy/spicy_9.js";
+import { everyEven } from "./src/spicy/spicy_9.js";
+import { someEven } from "./src/spicy/spicy_9.js";
 const stats = allCarStats;
-console.log(searchByYear(mpg_data, [2010, 2011, 2012]));
+console.log(someEven([4, 3, 2, 1, 0], x => x === 3));
+console.log(someEven([1, 0, 1, 0, 1], x => x === 0));
+console.log(someEven([1, 1, 1, 1, 0], x => x === 0));
+console.log(someEven([0, 0, 0, 0, 0], x => x === 0));
