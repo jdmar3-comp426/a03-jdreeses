@@ -20,6 +20,8 @@ queries.
  * sorted by horsepower in descending order.
  *
  */
+
+
 export function searchHighPower(car_data, minHorsepower, minTorque) {
     let newArr = []
     for (let i = 0; i < car_data.length; i++) {
@@ -27,7 +29,7 @@ export function searchHighPower(car_data, minHorsepower, minTorque) {
             newArr.push(car_data[i])
         }
     }
-    newArr.sort((a,b)=> (a.horsepower < b.horsepower ? 1 : -1))
+    newArr.sort(function(a, b){return a.horsepower - b.horsepower});
     return newArr;
 }
 
