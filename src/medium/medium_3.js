@@ -65,7 +65,15 @@ export function searchMpg(car_data, minCity, minHighway) {
  * @returns {[]} array of cars
  */
 export function searchName(car_data, searchTerm) {
-
+    let newArr = [];
+    for (let i = 0; i < car_data.length; i++) {
+       let text = car_data[i].id;
+       let result = text.toLowerCase();
+       if (result.includes(searchTerm)) {
+           newArr.push(car_data[i]);
+       }
+    }
+    return newArr;
 }
 
 
