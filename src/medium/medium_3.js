@@ -1,5 +1,8 @@
 import mpg_data from "./data/mpg_data.js";
 
+function filterHorsePower(array, min, max) {
+    return 
+}
 /*
 mpg_data is imported for you but that is for testing purposes only. All of the functions should use
 a car_data param that is supplied as the first parameter.
@@ -18,7 +21,14 @@ queries.
  *
  */
 export function searchHighPower(car_data, minHorsepower, minTorque) {
-
+    let newArr = []
+    for (let i = 0; i < car_data.length; i++) {
+        if ((car_data[i].horsepower >= minHorsepower) && (car_data[i].torque >= minTorque)) {
+            newArr.push(car_data[i])
+        }
+    }
+    newArr.sort((a,b)=> (a.horsepower < b.horsepower ? 1 : -1))
+    return newArr;
 }
 
 
