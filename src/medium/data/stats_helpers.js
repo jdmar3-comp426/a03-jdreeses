@@ -1,3 +1,5 @@
+
+
 export function variance(array, mean) {
     return array.map(function (sample) {
         return Math.pow(mean - sample, 2);
@@ -7,3 +9,4 @@ export function variance(array, mean) {
             return m;
         }, 0) / array.length;
 }
+
