@@ -7,11 +7,12 @@ see under the methods section
 */
 function getYearStats(array) {
 var newArr = []
-    for (let i = 0; i < array.length; i++) {
+    for (let i = 0; i <= array.length; i++) {
         newArr.push(Object.values(array[i])[17]);
     }
     return getStatistics(newArr);
 }
+
 function checkHybrid(object) {
     return (object.hybrid);
 }
