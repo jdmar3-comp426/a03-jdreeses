@@ -69,7 +69,8 @@ export function searchName(car_data, searchTerm) {
     for (let i = 0; i < car_data.length; i++) {
        let text = car_data[i].id;
        let result = text.toLowerCase();
-       if (result.includes(searchTerm)) {
+       let properSearch = searchTerm.toLowerCase();
+       if (result.includes(properSearch)) {
            newArr.push(car_data[i]);
        }
     }
