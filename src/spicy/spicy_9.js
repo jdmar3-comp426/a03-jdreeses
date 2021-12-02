@@ -83,7 +83,7 @@ export const tenTimesFifty = () => {
  * Write and export a function named "everyEven" which takes an array and a test
  *   function for checking individual elements of the array. The "everyEven"
  *   function should test the even elements of the array and return true only
- *   if at least one of the even elements passes the test.
+ *   if all of the even elements pass the test.
  *
  * @param arr   An array whose even elements should be tested
  * @param test  A function which takes as input a single element of the array
@@ -176,7 +176,7 @@ export const filter = (arr, test) => {
  *   odd numbers. Use the "everyEven" function in this function.
  */
 export const allEvensAreOdd = (arr) => {
-
+    return everyEven(arr, x => x % 2);
 };
 
 
@@ -186,7 +186,7 @@ export const allEvensAreOdd = (arr) => {
  *   array is an odd number. Use the "someEven" function in this function.
  */
 export const anEvenIsOdd = (arr) => {
-
+    return someEven(arr, x => x % 2)
 };
 
 
@@ -197,5 +197,6 @@ export const anEvenIsOdd = (arr) => {
  *   pass the test. You must use the filter function.
  */
 export const hasExactly = (arr, test, n) => {
-
+    let tester = filter(arr, test);
+    return (tester.pass.length == n);
 };
