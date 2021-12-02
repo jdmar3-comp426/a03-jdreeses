@@ -155,7 +155,18 @@ export const someEven = (arr, test) => {
  *       -->  { pass: [1, 5, 31], fail: [90] }
  */
 export const filter = (arr, test) => {
-
+        let yesArr = arr.filter(test);
+        let noArr = [];
+        for(let i = 0; i < arr.length; i++) {
+            if ( !yesArr.includes(arr[i])) {
+                noArr.push(arr[i]);
+            }
+        }
+        let returnable = {
+            pass: yesArr,
+            fail: noArr
+        }
+        return returnable;
 };
 
 
