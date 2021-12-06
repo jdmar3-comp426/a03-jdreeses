@@ -1,5 +1,8 @@
 import mpg_data from "./data/mpg_data.js";
 
+function filterHorsePower(array, min, max) {
+    return 
+}
 /*
 mpg_data is imported for you but that is for testing purposes only. All of the functions should use
 a car_data param that is supplied as the first parameter.
@@ -17,8 +20,17 @@ queries.
  * sorted by horsepower in descending order.
  *
  */
-export function searchHighPower(car_data, minHorsepower, minTorque) {
 
+
+export function searchHighPower(car_data, minHorsepower, minTorque) {
+    let newArr = []
+    for (let i = 0; i < car_data.length; i++) {
+        if ((car_data[i].horsepower >= minHorsepower) && (car_data[i].torque >= minTorque)) {
+            newArr.push(car_data[i])
+        }
+    }
+    newArr.sort(function(a, b){return a.horsepower - b.horsepower});
+    return newArr;
 }
 
 
@@ -33,7 +45,14 @@ export function searchHighPower(car_data, minHorsepower, minTorque) {
  *
  */
 export function searchMpg(car_data, minCity, minHighway) {
-
+    let newArr = []
+    for (let i = 0; i < car_data.length; i++) {
+        if ((car_data[i].highway_mpg >= minHighway) && (car_data[i].city_mpg >= minCity)) {
+            newArr.push(car_data[i])
+        }
+    }
+    newArr.sort(function(a, b){return a.highway_mpg - b.highway_mpg});
+    return newArr;
 }
 
 
@@ -46,7 +65,16 @@ export function searchMpg(car_data, minCity, minHighway) {
  * @returns {[]} array of cars
  */
 export function searchName(car_data, searchTerm) {
-
+    let newArr = [];
+    for (let i = 0; i < car_data.length; i++) {
+       let text = car_data[i].id;
+       let result = text.toLowerCase();
+       let properSearch = searchTerm.toLowerCase();
+       if (result.includes(properSearch)) {
+           newArr.push(car_data[i]);
+       }
+    }
+    return newArr;
 }
 
 
@@ -59,5 +87,14 @@ export function searchName(car_data, searchTerm) {
  * @returns {[]} an array of car objects
  */
 export function searchByYear(car_data, years) {
-
+    let newArr = []
+    for (let i = 0; i < car_data.length; i++) {
+        for (let j = 0; j < years.length; j++) {
+            if (car_data[i].year == years[j]) {
+                newArr.push(car_data[i])
+            }
+        }
+    }
+    newArr.sort(function(a, b){return b.year - a.year});
+    return newArr;
 }
